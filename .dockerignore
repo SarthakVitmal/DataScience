@@ -1,0 +1,10 @@
+__pycache__/
+.git/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+python-installer.exe
+Dataset.csv
+model.pkl
