@@ -1,39 +1,99 @@
-# GPU Revenue Predictor (FastAPI + Docker)
+#  NVIDIA Competitor Analysis Dashboard
 
-This repository contains a simple linear regression model and a FastAPI app to serve predictions.
+A comprehensive machine learning-powered dashboard for analyzing semiconductor industry competitors, with a focus on NVIDIA's market position and competitive landscape.
 
-Files added:
-- `app/main.py` - FastAPI application exposing POST `/predict`.
-- `requirements.txt` - Python dependencies.
-- `Dockerfile` - Container image to run the API with Uvicorn.
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Machine Learning](https://img.shields.io/badge/Machine%20Learning-FF6B6B?style=for-the-badge&logo=scikit-learn&logoColor=white)
 
-Quick start (Windows PowerShell):
+## 🌟 Features
 
-1. Train and save the model (creates `model.pkl`):
+- ** Interactive Data Visualization**: Explore competitor data through dynamic charts and graphs
+- ** Predictive Analytics**: Machine learning models to forecast key performance metrics
+- ** Model Interpretability**: SHAP and LIME analysis for transparent AI decision-making
+- ** Market Analysis**: Comprehensive competitor comparison and market share insights
+- ** Regression Prediction**: Adjust parameters to predict outcomes with real-time feedback
 
-```powershell
-python training.py
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Python 3.8 or higher
+- pip package manager
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/SarthakVitmal/DataScience.git
+   cd DataScience
+   ```
+
+2. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Run the application**
+   ```bash
+   streamlit run main.py
+   ```
+
+4. **Open your browser** and navigate to `http://localhost:8501`
+
+## 📁 Project Structure
+
+```
+DataScience/
+├── main.py                 # Main Streamlit application
+├── requirements.txt        # Python dependencies
+├── dataset.csv            # Dataset file
+└── README.md              # Project documentation
 ```
 
-2. Run locally without Docker:
+## 🛠️ Technologies Used
 
-```powershell
-python -m uvicorn app.main:app --host 0.0.0.0 --port 8000
-```
+- **Frontend**: Streamlit
+- **Data Processing**: Pandas, NumPy
+- **Visualization**: Plotly, Matplotlib, Seaborn
+- **Machine Learning**: Scikit-learn, SHAP, LIME
+- **Model Interpretability**: SHAP (SHapley Additive exPlanations), LIME
 
-3. Build Docker image and run container:
+## 📊 Dashboard Sections
 
-```powershell
-docker build -t gpu-rev-predictor:latest .
-docker run -p 8000:8000 gpu-rev-predictor:latest
-```
+### 1. Overview
+- Dataset summary with key metrics
+- Problem statement and solution overview
+- Key features highlight
 
-4. Test the endpoint (PowerShell curl):
+### 2. Regression Prediction
+- Select target variables for prediction
+- Choose from multiple ML models (Linear Regression, Random Forest, Gradient Boosting)
+- Real-time parameter adjustment with instant predictions
 
-```powershell
-curl -X POST "http://localhost:8000/predict" -H "Content-Type: application/json" -d '{"market_share": 12.5}'
-```
+### 3. Data Insights
+- Distribution analysis and box plots
+- Market share visualizations
+- Performance comparisons
+- Correlation heatmaps
+- Revenue analysis
+- Scatter plot relationships
 
-Notes:
-- If you already have `model.pkl` in the repo root, the API will load it on startup. If not, run `training.py` to create it.
-- The Dockerfile copies the entire repo; `.dockerignore` excludes large files.
+### 4. Model Interpretability
+- Model performance comparison
+- Actual vs predicted visualizations
+- SHAP feature importance analysis
+- LIME individual prediction explanations
+- Residual analysis
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+Made by **_Saket_** and **_Sarthak_** 🚀
