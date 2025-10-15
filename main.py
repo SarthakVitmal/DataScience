@@ -82,7 +82,7 @@ st.markdown(
 # Load data with caching
 @st.cache_data
 def load_data():
-    df = pd.read_csv("dataset.csv")
+    df = pd.read_csv("Dataset.csv")
     return df
 
 
