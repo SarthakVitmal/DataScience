@@ -3,12 +3,9 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
-from plotly.subplots import make_subplots
-import seaborn as sns
-import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler, LabelEncoder
-from sklearn.linear_model import LinearRegression, Ridge, Lasso
+from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
 from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
 import shap
@@ -194,9 +191,9 @@ def show_overview(df):
         """
     <div class="highlight-box">
     <h2>The Challenge</h2>
-    <p>The semiconductor industry is highly competitive, with companies like NVIDIA, AMD, Intel, Apple, and Broadcom 
-    vying for market dominance across gaming GPUs, data centers, and AI compute segments. Understanding the competitive 
-    landscape requires analyzing multiple factors including market share, revenue, product performance, power efficiency, 
+    <p>The semiconductor industry is highly competitive, with companies like NVIDIA, AMD, Intel, Apple, and Broadcom
+    vying for market dominance across gaming GPUs, data centers, and AI compute segments. Understanding the competitive
+    landscape requires analyzing multiple factors including market share, revenue, product performance, power efficiency,
     and innovation focus.</p>
     </div>
     """,
@@ -307,7 +304,7 @@ def show_prediction(df):
 
     st.markdown(
         """
-    Adjust the input parameters below to see how they affect the predicted output. 
+    Adjust the input parameters below to see how they affect the predicted output.
     The model uses historical data to make predictions based on your selections.
     """
     )
@@ -424,7 +421,7 @@ def show_prediction(df):
             with col2:
                 st.markdown(
                     f"""
-                <div style="text-align: center; padding: 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+                <div style="text-align: center; padding: 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
                 border-radius: 15px; color: white;">
                     <h2>Predicted {target_col}</h2>
                     <h1 style="font-size: 48px; margin: 20px 0;">{prediction:.2f}</h1>
@@ -827,7 +824,7 @@ def show_interpretability(df):
 
         st.markdown(
             """
-        LIME (Local Interpretable Model-agnostic Explanations) explains individual predictions 
+        LIME (Local Interpretable Model-agnostic Explanations) explains individual predictions
         by approximating the model locally with an interpretable model.
         """
         )

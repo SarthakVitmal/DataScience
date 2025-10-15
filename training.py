@@ -1,5 +1,6 @@
 import pandas as pd
 from sklearn.linear_model import LinearRegression
+import joblib
 
 # Load the dataset
 data = pd.read_csv('Dataset.csv')
@@ -11,5 +12,4 @@ model = LinearRegression()
 model.fit(X, y)
 
 # Save the model (for simplicity, we will just print the coefficients here)
-import joblib
 joblib.dump(model, 'model.pkl')
