@@ -28,7 +28,3 @@ jobs:
     - name: Run training script
       run: |
         python training.py
-
-    - name: Build Docker image
-      run: |
-        docker build -t my-model-api .
