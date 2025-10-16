@@ -3,18 +3,18 @@ FROM python:3.12-slim
 # Set working directory
 WORKDIR /app
 
-# Install system deps for pandas/scikit-learn
+# Install system dependencies
 RUN apt-get update && apt-get install -y build-essential git && rm -rf /var/lib/apt/lists/*
 
-# Copy requirements and install
+# Copy requirements and install dependencies
 COPY requirements.txt ./
 RUN python -m pip install --no-cache-dir -r requirements.txt
 
-# Copy project
+# Copy all project files
 COPY . /app
 
-# Expose port
+# Expose port 8000
 EXPOSE 8000
 
-# Run Uvicorn
+# Command to run the app
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
